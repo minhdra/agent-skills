@@ -1,0 +1,67 @@
+{
+  "groups": {
+    "meta": {
+      "title": "Meta and orchestration",
+      "when": "Start of every session, multi-agent work, handing work over, writing skills or CLAUDE.md.",
+      "skills": ["skill-router", "coordinator", "dispatching-parallel-agents", "resource-hygiene", "handoff", "setup-engineering-skills", "writing-for-agents"]
+    },
+    "planning": {
+      "title": "Planning, specs and decisions",
+      "when": "Before building: unclear idea, requirements, spec, tickets, ADRs, research, conflicting documents.",
+      "skills": ["grilling", "grill-me", "spec-precedence", "to-spec", "to-tickets", "triage", "research", "domain-modeling", "documentation-and-adrs"]
+    },
+    "build": {
+      "title": "Building and changing code",
+      "when": "Implementing features, designing modules, git flow, migrations, performance, TypeScript.",
+      "skills": ["tdd", "codebase-design", "git-workflow-and-versioning", "deprecation-and-migration", "performance-optimization", "typescript-pro", "typescript-advanced-types"]
+    },
+    "review": {
+      "title": "Debugging and review",
+      "when": "Something is broken or slow; reviewing a branch; writing a PR body.",
+      "skills": ["diagnosing-bugs", "code-review", "pr"]
+    },
+    "testing": {
+      "title": "Testing",
+      "when": "Browser/E2E test suites. Unit and integration tests are in `tdd` (group build).",
+      "skills": ["e2e-testing-patterns"]
+    },
+    "backend": {
+      "title": "Backend and APIs",
+      "when": "NestJS code, service architecture, REST/GraphQL design, OpenAPI, logging and tracing.",
+      "skills": ["nestjs-best-practices", "nestjs-expert", "architecture-patterns", "api-and-interface-design", "openapi-spec-generation", "observability-and-instrumentation"]
+    },
+    "data": {
+      "title": "Databases",
+      "when": "Postgres design/queries, Prisma, Neon, Supabase-style Postgres.",
+      "skills": ["supabase-postgres-best-practices", "neon-postgres", "prisma-orm-setup", "prisma-client-api", "prisma-cli"]
+    },
+    "frontend": {
+      "title": "Frontend, UI/UX and motion",
+      "when": "Designing or building screens, React/Next.js code, UI review, accessibility, i18n, animation.",
+      "skills": ["ui-ux", "vercel-react-best-practices", "vercel-composition-patterns", "vercel-react-view-transitions", "web-design-guidelines", "accessibility-engineering", "next-intl-add-language", "motion-director", "web-motion-auditor"]
+    },
+    "security-release": {
+      "title": "Security, CI/CD and release",
+      "when": "Auth/input/secrets, pipelines, containers, Kubernetes, launch checklist.",
+      "skills": ["security-and-hardening", "ci-cd-and-automation", "shipping-and-launch", "multi-stage-dockerfile", "kubernetes-specialist"]
+    },
+    "seo-marketing": {
+      "title": "SEO and marketing",
+      "when": "Search visibility, schema markup, site structure, copy, conversion, analytics, launch. Needs a product-marketing context doc.",
+      "skills": ["product-marketing", "seo-audit", "ai-seo", "programmatic-seo", "schema", "site-architecture", "link-building", "content-strategy", "copywriting", "copy-editing", "cro", "analytics", "conversion-tracking", "launch"]
+    },
+    "integrations": {
+      "title": "Provider integrations (opt-in)",
+      "when": "Only when the project actually uses the provider.",
+      "skills": ["stripe-best-practices"]
+    }
+  },
+  "profiles": {
+    "core": ["meta", "planning", "build", "review", "testing", "security-release"],
+    "backend-stack": ["core", "backend", "data"],
+    "frontend-stack": ["core", "frontend"],
+    "fullstack": ["backend-stack", "frontend-stack"],
+    "seo-only": ["seo-marketing"],
+    "everything": ["fullstack", "seo-only", "integrations"]
+  }
+}
